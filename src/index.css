@@ -1,13 +1,428 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.color {
+  color: hsl(176, 50%, 47%);
+  color: hsl(176, 72%, 28%);
+  color: hsl(0, 0%, 48%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: hsl(0, 20%, 95%);
+}
+
+p {
+  color: hsl(0, 0%, 48%);
+  line-height: 1.7rem;
+}
+
+.hero {
+  background-image: url(./images/image-hero-desktop.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 17rem;
+  padding: 1rem 3rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-list li {
+  list-style: none;
+  padding: 0 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-menu-cover {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(0px, -1000px);
+  transition: all 0.3s linear;
+}
+
+.nav-menu {
+  margin: 0 auto;
+  background: white;
+  padding: 1.5rem;
+  position: absolute;
+  top: 3rem;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.show-menu {
+  transform: translate(0px, 0px);
+}
+
+.icons,
+.close-icon {
+  display: none;
+  transition: all 0.3s linear;
+}
+
+.intro {
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  margin: 0 auto -2rem;
+  width: 600px;
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+  top: -4rem;
+}
+
+.intro-logo {
+  position: absolute;
+  top: -2rem;
+}
+
+.intro h2 {
+  padding: 1rem 0;
+}
+
+.intro p {
+  padding-bottom: 2rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.primary-btn {
+  color: white;
+  background-color: hsl(176, 50%, 47%);
+  border: none;
+  padding: 0.7rem 1.7rem;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.project-btn {
+  position: absolute;
+  left: 1.5rem;
+}
+
+.primary-btn:hover {
+  background-color: hsl(176, 72%, 28%);
+}
+
+.bookmark-btn {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  display: flex;
+  align-items: center;
+  color: hsl(0, 0%, 48%);
+  background-color: hsl(0, 0%, 81%);
+  border: none;
+  position: absolute;
+  right: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.bookmark-btn img {
+  height: 40px;
+}
+
+.bookmark-btn span {
+  padding: 0.7rem 1.7rem 0.7rem 0.7rem;
+}
+
+.bookmark-btn:hover img {
+  color: hsl(0, 0%, 48%);
+}
+
+/*Progress Styling*/
+.progress {
+  background-color: white;
+  padding: 1.5rem;
+  margin: 0 auto 2rem;
+  border-radius: 5px;
+  width: 600px;
+}
+
+.record {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.progress-info {
+  margin: 0 1.5rem 1.5rem 1rem;
+}
+
+.progress-info:first-child,
+.progress-info:nth-child(2) {
+  border-right: 0.5px solid hsl(0, 0%, 84%);
+  padding-right: 1rem;
+}
+
+/*About Styling*/
+.about {
+  background-color: white;
+  padding: 1.5rem;
+  margin: 0 auto 2rem;
+  border-radius: 5px;
+  width: 600px;
+}
+
+.about h3 ~ p {
+  margin: 1.5rem 0;
+}
+
+.pledge-info {
+  padding: 1.5rem;
+  border: 0.5px solid hsl(0, 0%, 84%);
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+}
+
+.inactive {
+  opacity: 0.5;
+}
+
+.inactive-btn {
+  color: white;
+  background-color: hsl(0, 0%, 48%);
+  border: none;
+  padding: 0.7rem 1.7rem;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.pledge-info p {
+  margin-top: 0.5rem;
+}
+
+.pledge-info header,
+.pledge-info footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pledge-info footer {
+  padding-top: 1rem;
+}
+
+.pledge {
+  color: hsl(176, 50%, 47%);
+}
+
+/* Modal Styling  */
+.modal-cover {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.3s linear;
+  visibility: hidden;
+  transform: scale(0);
+}
+
+.show-modal {
+  visibility: visible;
+  transform: scale(1);
+}
+
+.modal-content {
+  background: white;
+  width: 600px;
+  border-radius: 5px;
+  padding: 1.5rem;
+  margin: 0 auto;
+  top: 7rem;
+  position: relative;
+}
+
+.modal-content .radio {
+  position: absolute;
+  left: 1rem;
+  top: 1.35rem;
+}
+
+.modal-content-info {
+  padding: 0 0.2rem 0.5rem 3rem;
+}
+
+.modal-content img {
+  cursor: pointer;
+  position: absolute;
+  right: 1.5rem;
+}
+
+.modal-info {
+  border: 0.5px solid hsl(0, 0%, 84%);
+  border-radius: 5px;
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.active {
+  border-color: hsl(176, 50%, 47%);
+}
+
+.modal-info header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1.5rem 0.5rem;
+}
+
+.modal-info header div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 1.5rem 0.5rem;
+}
+
+.modal-info h4 {
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.modal-info h4:hover {
+  color: hsl(176, 50%, 47%);
+}
+
+.modal-info header div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal-info footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+  border-top: 0.5px solid hsl(0, 0%, 84%);
+}
+
+.modal-info footer p {
+  margin-left: 1rem;
+}
+
+.modal-info footer button {
+  margin-right: 1rem;
+}
+
+.modal-info footer input {
+  caret-color: hsl(176, 50%, 47%);
+}
+
+.modal-form,
+.form-control {
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid hsl(0, 0%, 48%);
+  margin-right: 10px;
+}
+
+.form-control span {
+  color: hsl(0, 0%, 48%);
+}
+
+.form-control input {
+  border: none;
+  outline: none;
+  width: 40px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.modal-complete {
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 350px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  position: relative;
+  top: 10rem;
+}
+
+.modal-complete img {
+  margin-bottom: 2rem;
+}
+
+.modal-complete h3,
+.modal-complete p {
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 670px) {
+  .intro,
+  .progress,
+  .about,
+  .modal-content {
+    width: 80%;
+  }
+  .icons,
+  .show-icon {
+    display: unset !important;
+  }
+  .hide-icon {
+    display: none;
+  }
+  .modal-info header div:first-child {
+    display: grid;
+    gap: 5px;
+  }
+  .modal-content-info {
+    padding-left: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .available {
+    position: absolute;
+    padding-bottom: 1rem;
+    bottom: 0;
+    left: 1rem;
+    margin: unset !important;
+  }
 }
