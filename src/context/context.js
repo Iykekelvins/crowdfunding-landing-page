@@ -38,9 +38,7 @@ export const AppProvider = ({ children }) => {
   const increaseTarget = (initialValue) => {
     dispatch({ type: "INCREASE", payload: initialValue });
   };
-  const decreaseNumber = (id) => {
-    dispatch({ type: "DECREASE", payload: id });
-  };
+
   return (
     <AppContext.Provider
       value={{
